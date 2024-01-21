@@ -34,10 +34,8 @@ rm -rf feeds/luci/themes/luci-theme-bootstrap
 
 cd package
 git clone -b main https://github.com/sirpdboy/luci-theme-kucat.git
+git clone -b main https://github.com/sirpdboy/luci-app-advancedplus.git
 cd ..
-
-
-
 
 
 #克隆passwall环境插件
