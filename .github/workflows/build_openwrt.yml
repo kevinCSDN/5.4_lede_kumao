@@ -72,7 +72,7 @@ jobs:
         docker-images: false
         swap-storage: false
         
-    - name: 检查准备_1 #Checkout
+    - name: 检查准备 #Checkout
       uses: actions/checkout@main
       with:
         fetch-depth: 0
@@ -99,10 +99,10 @@ jobs:
         temp-reserve-mb: 100
         root-reserve-mb: 1024
         
-    - name: 检查准备_2 #Checkout
-      uses: actions/checkout@main
-      with:
-        fetch-depth: 0
+    - name: Check Server Performance Again
+      run: |
+        echo "--------------------------硬盘信息--------------------------"
+        echo "硬盘数量：$(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
         
     - name: Clone source code
       working-directory: /workdir
